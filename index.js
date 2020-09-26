@@ -12,7 +12,7 @@ function formWatch() {
 }
 
 function fetchWeather(city, key) {
-    fetch(`http://api.weatherstack.com/current?access_key=${key}&query=${city}`)
+    fetch(`https://api.weatherstack.com/current?access_key=${key}&query=${city}`)
     .then(r => r.json())
     .then(rJson => displayResults(rJson))
     .catch(Error => alert("Sorry about that! Something seems to be wrong with your search, double check spelling :)"))
