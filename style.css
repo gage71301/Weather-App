@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1b262c;
+    height: 100%;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+section {
+    text-align: center;
+}
+
+#weather {
+    display: flex;
+    flex-direction: column;
+}
+
+#location, button { 
+    background-color:  #0f4c75;
+    border: 0;
+    border-radius: 4px;
+    height: 30px;
+    padding: 3px;
+    font-family: 'Rubik', sans-serif;
+    outline: none;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    background-color:  #0f4c75;
+}
+
+#icon {
+    background-color: blue;
+    width: 50%;
+    margin: auto;
+}
+
+ul {
+    width: 280px;
+    height: auto;
+    background-color: #0f4c75;
+    margin: auto auto;
+    border-radius: 7px;
+    transition: all .3s ease-in-out;
+}
+
+ul:hover {
+    transform: scale(1.1);
+}
+
+div {
+    padding: 40px;
+}
+
+li {
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-cloud-moon {
+    padding-top: 20px;
+    color:  #0f4c75;
+    font-size: 6rem;
+}
+
+span {
+    font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+    font-family: 'Rubik', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+h1, h2 {
+    color: #FFFF;
+}
+
+#newcity {
+    margin-left: 70%;
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    opacity: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+#newcity:hover {
+    opacity: 1;
+}
+
+.fa-plus-circle {
+    align-self: center;
+    font-size: 2rem;
+    color: #FFFF;
+}
