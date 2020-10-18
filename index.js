@@ -13,7 +13,7 @@ function formWatch() {
 }
 
 function fetchWeather(city, key) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
     .then(r => r.json())
     .then(rJson => displayResults(rJson))
     .catch(Error => alert("Sorry about that! Something seems to be wrong with your search, double check spelling :)"))
