@@ -1,6 +1,6 @@
 $(initializeApp);
 
-const key = "3ad5dc036a5c694991e96e57c4d2f7c4"
+const key = "4bd34429190658990b2312d1e17b1902"
 
 function formWatch() {
     $("#inpform").on("submit", e => {
@@ -8,18 +8,19 @@ function formWatch() {
         let city = $("#location").val();
         console.log(city);
         fetchWeather(city, key);
+
     })
 }
 
 function fetchWeather(city, key) {
-    fetch(`https://api.weatherstack.com/current?access_key=${key}&query=${city}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
     .then(r => r.json())
     .then(rJson => displayResults(rJson))
     .catch(Error => alert("Sorry about that! Something seems to be wrong with your search, double check spelling :)"))
 }
 
-function celsToFar(temp) {
-    return (temp * 9 / 5) + 32;
+function kelvinToFar(temp) {
+    return (temp - 273.15) * 9/5 + 32;
 }
 
 function newEntry() {
@@ -33,20 +34,16 @@ function displayResults(rJson) {
 
     console.log(rJson);
 
-    const tempF = celsToFar(rJson.current.temperature);
-    const location = `<h1>${rJson.location.name} ${rJson.location.region}</h1>`
-    const humidity = rJson.current.humidity
-    const temper = `<h2>${rJson.current.temperature}°C</h2>`
+    const location = `<h1>${rJson.name}</h1>`
+    const humidity = `<h2>Humidity: ${rJson.main.humidity}</h2>`
+    const pressure = `<h2>Pressure: ${rJson.main.pressure}</h2>`
+    const tempFar = `<h1>${Math.round(kelvinToFar(rJson.main.temp))} F°</h1>`
+    console.log(tempFar)
 
     $("#area").html(location);
-    $("#temperature").html(temper);
-    if(humidity > 50) {
-        $("#humidity").html(`<h1>High Humidity ${humidity}%</h1>`)
-    } else if(humidity < 30) {
-        $("#humidity").html(`<h1>Low Humidity ${humidity}%</h1>`)
-    } else {
-        $("#humidity").html(`<h1>Normal Humidity ${humidity}%</h1>`)
-    }
+    $("#temperature").html(tempFar);
+    $("#humidity").html(humidity);
+    $("#pressure").html(pressure);
 
     $("#newcity").show();
     $("#inpform").hide();

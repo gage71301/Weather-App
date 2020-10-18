@@ -5,8 +5,15 @@
 }
 
 body {
-    background-color: #1b262c;
-    height: 100%;
+    background-image: url("images/Summer.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.hot {
+    background-image: url("images/Summer.jpg");
 }
 
 header {
@@ -28,20 +35,40 @@ section {
     flex-direction: column;
 }
 
+#location {
+    text-shadow: 2px 2px #000;
+    width: 240px;
+    height: 60px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #FFF;
+}
+
+.locationBut {
+    border-bottom: 2px solid #FFF;
+}
+
+::placeholder {
+    color: #FFFF;
+}
+
+#userinput {
+    margin-top: 10px;
+}
+
 #location, button { 
-    background-color:  #0f4c75;
-    border: 0;
-    border-radius: 4px;
-    height: 30px;
+    background-color: #0004;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
     padding: 3px;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     outline: none;
+    color: white;
 }
 
 button {
     width: 30px;
     height: 30px;
-    background-color:  #0f4c75;
 }
 
 #icon {
@@ -74,27 +101,30 @@ li {
     flex-direction: column;
 }
 
+.fa-arrow-right {
+    text-shadow: 2px 2px #000;
+}
+
 .fa-cloud-moon {
     padding-top: 20px;
     color:  #0f4c75;
     font-size: 6rem;
 }
 
-span {
-    font-family: 'Rubik', sans-serif;
-}
-
 h1 {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 2px 3px 0px rgba(0,0,0,0.9);
+    font-size: 4rem;
 }
 
 h2 {
     text-align: center;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 h1, h2 {
     color: #FFFF;
+    text-shadow: 2px 3px 0px rgba(0,0,0,0.9);
 }
 
 #newcity {
@@ -115,5 +145,5 @@ h1, h2 {
 .fa-plus-circle {
     align-self: center;
     font-size: 2rem;
-    color: #FFFF;
+    color: #000
 }

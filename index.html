@@ -5,36 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/e556a5bc0c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <button id="newcity"><i class="fas fa-plus-circle"></i></button>
-            <h1 id="logo"><i class="fas fa-cloud-moon"></i></h1>
-        </nav>
-    </header>
+    <section class="container">
+        <header>
+            <nav>
+                <button id="newcity"><i class="fas fa-plus-circle"></i></button>
+            </nav>
+        </header>
 
-    <main>
+        <main>
 
-        <section id="weather">
-            <div id="area"></div>
-            <div id="temperature"></div>
-            <div id="humidity"></div>
-        </section>
+            <section id="userinput">
+                <form action="submit" id="inpform">
 
-        <section id="userinput">
-            <form action="submit" id="inpform">
+                    <input type="text" id="location" autocomplete="off" placeholder="Enter your city name">
 
-                <input type="text" id="location">
+                    <button class="locationBut" type="submit"><i class="fas fa-arrow-right"></i></button>
+                    
+                </form>
+            </section>
 
-                <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                
-            </form>
-        </section>
 
-    </main>
+            <section id="weather">
+                <div id="area"></div>
+                <div id="temperature"></div>
+                <div id="other">
+                    <div id="humidity"></div>
+                    <div id="pressure"></div>
+                </div>
+            </section>
+
+        </main>
+    </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
